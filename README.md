@@ -19,8 +19,8 @@ On your linux system, run the following commands
 
 # Run the test
 * to show ALL the posts in the database: 
- curl http://localhost:5010/showPosts 
+ $ curl http://localhost:5010/showPosts 
 * to show one single post by it's id (if it exists), the example will show post_id = 2:
- curl http://localhost:5010/showPosts/2
+ $ curl http://localhost:5010/showPosts/2
 * to add a new post, use the file 'new_entry.json':
- curl-H "Content-type: application/json" -X  POST http://localhost:5010/addPost --data @new_entry.json 
+ $ curl-H "Content-type: application/json" -X  POST http://localhost:5010/addPost --data @new_entry.json 
