@@ -25,6 +25,10 @@ On your linux system, run the following commands
 * to add a new post, use the file 'new_entry.json':
  $ curl-H "Content-type: application/json" -X  POST http://localhost:5010/addPost --data @new_entry.json
 
+# requirements for post data
+Make sure that your data is already url encoded, like the title: "Paul's blog" should be "Paul%27s blog". Just make sure that at least the single quotes are encoded!. There is a javascript encodeURI() function that you could use in your frontend, and should do the job!
+
+
 # Run the LIVE test on AWS from your own linux box (or if you have curl on wiindows, that will work too) 
 * to show ALL the posts in the database: 
  $ curl http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/showPosts 
