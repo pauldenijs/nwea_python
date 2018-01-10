@@ -15,12 +15,22 @@ On your linux system, run the following commands
 
 # Once you have the environment, on a new shell, you can do: 
 * source nwea/bin/activate
-* bin/python nwea_server.py
+* nwea/bin/python nwea_server.py
 
-# Run the test
+# Run the test (local)
 * to show ALL the posts in the database: 
  $ curl http://localhost:5010/showPosts 
 * to show one single post by it's id (if it exists), the example will show post_id = 2:
  $ curl http://localhost:5010/showPosts/2
 * to add a new post, use the file 'new_entry.json':
- $ curl-H "Content-type: application/json" -X  POST http://localhost:5010/addPost --data @new_entry.json 
+ $ curl-H "Content-type: application/json" -X  POST http://localhost:5010/addPost --data @new_entry.json
+
+# Run the LIVE test on AWS from your own linux box (or if you have curl on wiindows, that will work too) 
+* to show ALL the posts in the database: 
+ $ curl http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/showPosts 
+* to show one single post by it's id (if it exists), the example will show post_id = 2:
+ $ curl http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/showPosts/2
+* to add a new post, use the file 'new_entry.json' (MAKE SURE YOU HAVE THAT FILE LOCALLY!!!!):
+ $ curl-H "Content-type: application/json" -X  POST http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/addPost --data @new_entry.json
+
+'''NOTE''': the LIVE test will not work after 02/01/2018 !!!!!!!!!
