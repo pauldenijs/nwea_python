@@ -37,4 +37,9 @@ Make sure that your data is already url encoded, like the title: "Paul's blog" s
 * to add a new post, use the file 'new_entry.json' (MAKE SURE YOU HAVE THAT FILE LOCALLY!!!!):
  $ curl -H "Content-type: application/json" -X  POST http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/addPost --data @new_entry.json
 
+If you do NOT have the file, you can simply put something on the command line, like:
+$ curl -H "Content-type: application/json" -X  POST http://ec2-52-27-248-102.us-west-2.compute.amazonaws.com:5010/addPost --data '[{"title":"title1","body":"new body"}]'
+ 
+
+
 '''NOTE''': the LIVE test will not work after 02/01/2018 !!!!!!!!!
